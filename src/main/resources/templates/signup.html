@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+</head>
+<body>
+    <form th:object="${user}" th:action="@{/proceed_registration}" method="post">
+        <div>
+            <label>Username</label>
+            <input th:field="*{username}" type="text" minlength="3"
+                maxlength="16" placeholder="b0b_sm1th" required>
+        </div>
+        <div>
+            <label>Password</label>
+            <input th:field="*{password}" type="password" minlength="6"
+                maxlength="10" placeholder="********" required>
+        </div>
+        <div>
+            <label>Email</label>
+            <input th:field="*{email}" type="email"
+                placeholder="bobsmith@gmail.com" required>
+        </div>
+        <div>
+            <button type="submit">sign up</button>
+        </div>
+    </form>
+</body>
+</html>
